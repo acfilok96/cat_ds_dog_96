@@ -11,7 +11,7 @@ json_file.close()
 loaded_model = model_from_json(loaded_model_json)
         
 app = Flask(__name__)
-PATH = "/uploads/"
+PATH = "uploads/"
 
 @app.route("/")
 def home():
