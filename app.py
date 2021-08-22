@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 from keras.models import model_from_json
 
-json_file = open('cat_vs_dog_model.json', 'r')
+json_file = open('cat_vs_dog_model_spare.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
