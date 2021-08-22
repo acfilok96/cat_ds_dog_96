@@ -1,5 +1,5 @@
 flask
-pilow
+pillow
 numpy
 keras
 tensorflow
