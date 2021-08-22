@@ -11,7 +11,7 @@ def home():
 def about():
     if request.method == "POST":
         image_file = request.files["image_file"]
-        path = url_for('static',filename= str(image_file.filename) )
+        path = url_for('./static',filename= image_file.filename )
         image_file.save(path)
         
         return render_template("index.html", result = str(path))
