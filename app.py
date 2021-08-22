@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import cv2
-from PIL import Image
+import os
 import numpy as np
 from keras.models import model_from_json
 
