@@ -2,5 +2,3 @@ flask
 pillow
 numpy
 keras
-tensorflow
-os
