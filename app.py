@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
-import os
-from PIL import Image 
-import PIL 
+import cv2
+from PIL import Image
 import numpy as np
 from keras.models import model_from_json
 
@@ -26,10 +25,10 @@ def about():
         path = os.path.join(PATH, image_file.filename)
         image_file.save(path)
         secure_path = path
-        img_path = Image.open(path)
-        img_path = np.asarray(img_path)
-        img_path = img_path.reshape((1, 500, 500, 3))
-        pred = loaded_model.predict(img_path)
+        img = cv2.imread(img_path)
+        resized = cv2.resize(img, (500, 500))
+        resized = resized.reshape((1, 500, 500, 3))
+        pred = loaded_model.predict(resized)
         pred = np.argmax(pred)
         name_spices = "CAT"
         if pred == 1:
